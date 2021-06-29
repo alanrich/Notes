@@ -2,7 +2,7 @@
   "name": "notes2",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://alanrich-dev.github.io/react-notes-app",
+  "homepage": "https://alanrich-dev.github.io/Notes",
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
