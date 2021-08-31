@@ -10,8 +10,8 @@ const Search = ({ searchText, setSearchText }) => {
 				type='text'
 				value={searchText}
 				onChange={(e)=> setSearchText(e.target.value)} />
-    </div>
-  );
+    	</div>
+  	);
 }
 
 export default Search

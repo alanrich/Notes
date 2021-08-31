@@ -17,6 +17,7 @@ const App = () => {
     }
   ]);
 
+
   useEffect(() => {
 		const savedNotes = JSON.parse(
 			localStorage.getItem('react-notes-app-data')
@@ -26,6 +27,7 @@ const App = () => {
 		}
 	}, []);
 
+
 	useEffect(() => {
 		localStorage.setItem(
 			'react-notes-app-data',
@@ -33,6 +35,8 @@ const App = () => {
 		);
 	}, [notes]);
 
+
+  
   const addNote = (text) => {
       const date = new Date();
       const newNote = {
@@ -45,18 +49,27 @@ const App = () => {
       console.log("newnotes = " + newNotes)
       setNotes(newNotes);
   }
+
+
+
   const deleteNote = (id) => {
     const newNotes = notes.filter((note) => (note.id !== id));
     setNotes(newNotes);
   }
 
+
+
   const editNote = ((id) => {
     setNoteEditing(id);
   });
 
+
+
   const editingTextHandler = (text) => {
     setEditingText(text);
   }
+
+
 
   // assign the edited value to the task with matching id.
   // except the one the method modifies
@@ -73,12 +86,13 @@ const App = () => {
   }
 
 
+
   return (
     <div className={darkMode && 'dark-mode'}>
       <div className='container'>
         <Header
           darkMode={darkMode}
-          darkModeHandler={setDarkMode}/>
+          darkModeHankdler={setDarkMode}/>
         <Search setSearchText={setSearch} searchText={search}/>
         <NotesList
             notes={notes.filter((note) =>

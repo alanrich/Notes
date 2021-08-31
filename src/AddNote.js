@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 const AddNote = ({ handleSubmitProp }) => {
-  const [noteText,setNoteText] = useState('');
+  const [noteText, setNoteText] = useState('');
   var charLimit = 200;
 
   const handleChange = (e) => {
@@ -24,8 +24,8 @@ const AddNote = ({ handleSubmitProp }) => {
         rows="8"
         placeholder="type to add a note"
         onChange={handleChange}
-        value={noteText}
-      ></textarea>
+        value={noteText}>
+      </textarea>
       <div className="note-footer">
         <small>{charLimit - noteText.length} characters remaining</small>
         <button className='save'onClick={handleSubmit}>Save</button>
