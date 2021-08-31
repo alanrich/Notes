@@ -3,6 +3,11 @@ import Search from './Search'
 import Header from './Header'
 import { useState, useEffect } from 'react'
 
+/*
+maintain state in top level component to allow for interaction 
+among state entities
+*/
+
 const App = () => {
 
   const [darkMode, setDarkMode] = useState(false);
@@ -35,24 +40,28 @@ const App = () => {
 		);
 	}, [notes]);
 
+/*************************** METHODS *******************************/
 
-  
   const addNote = (text) => {
       const date = new Date();
+      //create a new note
       const newNote = {
         id: Date.now(),
         date: date.toLocaleDateString(),
         text:text,
       };
       console.log('newNote =' + newNote)
+      // create a new array to display w/o mutating existing one
       const newNotes = [...notes, newNote];
       console.log("newnotes = " + newNotes)
+      // update state
       setNotes(newNotes);
   }
 
 
 
   const deleteNote = (id) => {
+    //deletion occurs via the parent component
     const newNotes = notes.filter((note) => (note.id !== id));
     setNotes(newNotes);
   }
@@ -71,8 +80,6 @@ const App = () => {
 
 
 
-  // assign the edited value to the task with matching id.
-  // except the one the method modifies
   const saveEdit = (id) => {
     const newNotes = [...notes].map((note) => {
       if(note.id === id){
@@ -82,6 +89,7 @@ const App = () => {
     });
     setNotes(newNotes);
     setNoteEditing(null);
+    //clear the green new note form, make ready for new submission
     setEditingText("");
   }
 

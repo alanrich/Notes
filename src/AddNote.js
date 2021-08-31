@@ -5,12 +5,14 @@ const AddNote = ({ handleSubmitProp }) => {
   var charLimit = 200;
 
   const handleChange = (e) => {
+    //prevent user from exceeding char. limit
     if(noteText.length < charLimit){
       setNoteText(e.target.value)
     };
   }
 
   const handleSubmit = () => {
+    //prevent user submitting an empty note
     if(noteText.trim().length > 0){
       handleSubmitProp(noteText)
     };

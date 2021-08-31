@@ -3,6 +3,8 @@ import { Icon } from '@material-ui/core'
 import EditIcon from '@material-ui/icons/Edit'
 import PriorityHighIcon from '@material-ui/icons/PriorityHigh'
 
+
+// This is all UI
 const Note = ({ id, date, text, handleDelete, handleEdit, handlePriority}) => {
   return(
       <div className='note'>

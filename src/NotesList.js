@@ -3,12 +3,14 @@ import Note from './Note'
 import AddNote from './AddNote'
 
 const NotesList = ({  editingText, editingTextHandler, notes, handleSubmitProp, handleDelete, handleEdit, saveEdit, noteEditing }) => {
-  const [noteText,setNoteText] = useState('');
+  
+  // start with an empty Noteslist
+  const [noteText, setNoteText] = useState('');
   var charLimit = 200;
-
+  
+  //render the array of notes using map method
   return(
     <div className='notes-list'>
-
       {notes.map((note) =>  note.id === noteEditing ?
         <div className='note yellow'>
           <textarea
