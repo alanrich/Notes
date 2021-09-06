@@ -59,27 +59,26 @@ const App = () => {
   }
 
 
-
+  //deletion delegated to the parent component
   const deleteNote = (id) => {
-    //deletion occurs via the parent component
     const newNotes = notes.filter((note) => (note.id !== id));
     setNotes(newNotes);
   }
 
 
-
+  // marks a note for editing
   const editNote = ((id) => {
     setNoteEditing(id);
   });
 
 
-
+  // assigns new text to edited note
   const editingTextHandler = (text) => {
     setEditingText(text);
   }
 
 
-
+  // create a new array upon saving your edited note
   const saveEdit = (id) => {
     const newNotes = [...notes].map((note) => {
       if(note.id === id){
@@ -89,7 +88,7 @@ const App = () => {
     });
     setNotes(newNotes);
     setNoteEditing(null);
-    //clear the green new note form, make ready for new submission
+    //reset the form after its submitted
     setEditingText("");
   }
 

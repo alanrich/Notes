@@ -9,7 +9,8 @@ const Search = ({ searchText, setSearchText }) => {
 				placeholder='type to search...'
 				type='text'
 				value={searchText}
-				onChange={(e)=> setSearchText(e.target.value)} />
+				onChange={(e)=> setSearchText(e.target.value)} 
+			/>
     	</div>
   	);
 }
